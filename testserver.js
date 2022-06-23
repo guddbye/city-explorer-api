@@ -1,4 +1,3 @@
-'use strict';
 
 console.log('Server face.');
 const express = require('express');
@@ -7,10 +6,10 @@ const weatherData = require('./data/weather.json');
 
 const app = express();
 
-const PORT=process.env.PORTANDRE || 3002;
+const PORT = process.env.PORTANDRE || 3002;
 
 app.get('/', (request,response)=>{
-  response.send('Hello from the other side!');
+  response.send('Weather you say?');
 
 });
 
@@ -18,7 +17,7 @@ app.get('/weather',(request,response) => {
 
   let dataToSend = weatherData.find(data => data.city_name === request.query.city);
   response.send(dataToSend);
-  response.send('test of weather route');
+  response.send('p');
 });
 
 app.get('*', (request,response) => {
