@@ -2,7 +2,7 @@
   "name": "city-explorer-api",
   "version": "1.0.0",
   "description": "city-explorer api lab",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/guddbye/city-explorer-api#readme",
   "dependencies": {
+    "axois": "^0.0.1-security",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "react-axios": "^2.0.6"
   }
 }

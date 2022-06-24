@@ -21,3 +21,5 @@ Start time: pm_
 Finish time: _pm
 
 Actual time needed to complete: _min
+
+![WRRC3](WRRC3.jpg)
