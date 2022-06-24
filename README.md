@@ -12,14 +12,14 @@ Actual time needed to complete: 3.5hrs
 
 # next lab
 
-Name of feature: 
+Name of feature: lab07
 
-Estimate of time needed to complete: __ min_
+Estimate of time needed to complete: 1hr
 
-Start time: pm_
+Start time: 5PM
 
-Finish time: _pm
+Finish time: 9PM
 
-Actual time needed to complete: _min
+Actual time needed to complete: 4hrs
 
-![WRRC3](WRRC3.jpg)
+![WRRC3](WRRC3.png)
