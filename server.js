@@ -42,17 +42,19 @@ app.get('/hello', (request, response) => {
 
 });
 
+
 app.get('/weather', (request, response) => {
+  const mySearchQuery = request.query.searchQuery;
   console.log(weatherData);
-  console.log('From weather: ',request.query);
-  console.log(request.query.searchquery);
-  const dataToSend = weatherData.find(object => object.city_name === request.query.searchquery);
-  console.log(dataToSend);
+  console.log('From weather: ', request.query);
+  console.log('Line 48 ', request.query.searchQuery);
+  const dataToSend = weatherData.find(object => object.city_name.toLowerCase() === mySearchQuery.toLowerCase());
+  console.log('Line 50', dataToSend.data);
+  let dataArr = dataToSend.data.map(dataForecast => new Forecast(dataForecast));
 
-  const result = new Forecast(dataToSend);
-  console.log(result);
+  console.log('Line 56 ', dataArr);
 
-  response.send('Test of weather route');
+  response.send(dataArr);
 });
 
 
@@ -70,7 +72,7 @@ class Forecast {
   constructor(weatherObject) {
     console.log('This :', weatherObject.datetime, weatherObject.weather.description);
     this.datetime = weatherObject.datetime;
-    this.description = weatherObject.description;
+    this.description = weatherObject.weather.description;
   }
 }
 

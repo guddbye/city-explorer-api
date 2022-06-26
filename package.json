@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/guddbye/city-explorer-api#readme",
   "dependencies": {
+    "axios": "^0.27.2",
     "axois": "^0.0.1-security",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
