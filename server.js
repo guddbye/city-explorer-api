@@ -1,7 +1,5 @@
 'use strict';
 
-console.log('Server face');
-
 // ***** REQUIRE *****
 // In our server, we have to use 'require' instead of 'import'
 // Here we will list the requirement for a server.
@@ -10,6 +8,7 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 let weatherData = require('./data/weather.json');
+
 
 // ****** USE ******
 //Once I have required something, we have to use it.
@@ -45,9 +44,9 @@ app.get('/hello', (request, response) => {
 
 app.get('/weather', (request, response) => {
   const mySearchQuery = request.query.searchQuery;
-  console.log(weatherData);
-  console.log('From weather: ', request.query);
-  console.log('Line 48 ', request.query.searchQuery);
+  // console.log(weatherData);
+  // console.log('From weather: ', request.query);
+  // console.log('Line 48 ', request.query.searchQuery);
   const dataToSend = weatherData.find(object => object.city_name.toLowerCase() === mySearchQuery.toLowerCase());
   console.log('Line 50', dataToSend.data);
   let dataArr = dataToSend.data.map(dataForecast => new Forecast(dataForecast));
@@ -78,6 +77,7 @@ class Forecast {
 
 // ****** ERRORS ******
 
+// eslint-disable-next-line no-unused-vars
 app.use((error, request, response, next) => {
   response.status(500).send(error.message);
 });
