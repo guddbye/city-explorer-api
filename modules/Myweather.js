@@ -5,7 +5,6 @@ const axios = require('axios');
 async function getWeather(request, response, next){
   try {
     const searchQuery = request.query.searchQuery;
-    // console.log(searchQuery);
     let lat = request.query.lat;
     let lon = request.query.lon;
     console.log(lon);
@@ -16,7 +15,6 @@ async function getWeather(request, response, next){
     console.log(dataToSend);
     response.send(dataToSend);
   } catch (error) {
-    // next(error);
   }
 };
 

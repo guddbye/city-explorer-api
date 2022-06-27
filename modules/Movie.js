@@ -37,8 +37,8 @@ class CityMovies {
   constructor(movieObject) {
     this.title = movieObject.original_title;
     this.overview = movieObject.overview;
-    this.total_votes = movieObject.vote_count;
-    this.image_url = movieObject.poster_path;
+    this.total_votes = movieObject.vote_count?movieObject.vote_count:'';
+    this.image_url = movieObject.poster_path?movieObject.poster_path:'';
     this.released_on = movieObject.release_date;
   }
 }

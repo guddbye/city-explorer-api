@@ -5,7 +5,7 @@ const express = require('express');
 const cors = require('cors');
 
 const weather = require('./modules/Weather.js');
-const getMovies = require('./modules/Movie');
+const getMovies = require('./modules/Movie.js');
 
 const app = express();
 
@@ -16,8 +16,8 @@ app.get('/weather', weatherHandler);
 app.get('/movies', getMovies);
 
 function weatherHandler(request, response) {
-  const { lat, lon } = request.query;
-  weather(lat, lon)
+  const { searchQuery } = request.query;
+  weather(searchQuery)
     .then(summaries => response.send(summaries))
     .catch((error) => {
       console.error(error);
