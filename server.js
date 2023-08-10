@@ -3,9 +3,10 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const path = require('path'); // Import the path module
 
-const weather = require('./modules/Weather.js');
-const getMovies = require('./modules/Movie.js');
+const weather = require(path.join(__dirname, './modules/Weather.js')); // Use path.join to create the correct path
+const getMovies = require(path.join(__dirname, './modules/Movie.js')); // Use path.join to create the correct path
 
 const app = express();
 
